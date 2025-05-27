@@ -6,48 +6,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="scr/styles/styles.css">
     
-    
+    <link rel="shortcut icon" href="scr/images/logo-png.ico" type="image/x-icon">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Moto Elegance - Agenda</title>
 </head>
+
 <body>
     <header>
-        <nav id="navbar">
-            <i class="fa-solid fa-motorcycle" id="nav-logo"> Elegance</i>
 
-            <ul id="nav-list">
-                <li class="nav-item active">
-                    <a href="#home">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#menu">Lavagens</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#extra">Adicionais</a>
-                </li>
-            </ul>
+        <div class="aviso-container" id="avisoPrecos">
+    <div class="aviso-conteudo">
+        <button class="fechar-aviso" id="fecharAvisoBtn">&times;</button>
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>TODOS OS VALORES INFORMADOS SÃO VALORES INICIAIS. PARA CONFIRMAÇÃO DO VALOR, SERÁ PASSADO ANTES DE INICIAR A LAVAGEM COM A MOTO NO LOCAL.</p>
+    </div>
+</div>
 
-        </nav>
+    <nav id="navbar">
+        <!-- Logo como imagem (substitua o caminho) -->
+        <img src="scr/images/logo_header.png" alt="Moto Elegance" id="nav-logo">
 
-        <div id="mobile-menu">
-            <ul id="mobile-nav-list">
-                <li class="nav-item">
-                    <a href="#home">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#menu">Lavagens</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#extra">Adicionais</a>
-                </li>
-            </ul>
+        <ul id="nav-list">
+            <li class="nav-item active">
+                <a href="#home">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#menu">Lavagens</a>
+            </li>
+            <li class="nav-item">
+                <a href="#extra">Adicionais</a>
+            </li>
+        </ul>
 
-            <button class="btn-default">
-                Agende aqui
-            </button>
-        </div>
-    </header>
+        <!-- Botão para menu mobile -->
+        <button id="mobile-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Menu mobile (mantido completo) -->
+    <div id="mobile-menu">
+        <ul id="mobile-nav-list">
+            <li class="nav-item">
+                <a href="#home">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#menu">Lavagens</a>
+            </li>
+            <li class="nav-item">
+                <a href="#extra">Adicionais</a>
+            </li>
+        </ul>
+    </div>
+</header>
 
     <main id="content">
         <section id="home">
@@ -66,7 +78,7 @@
                     </div>
 
                     <div class="social-media-buttons">
-                        <a href="https://wa.me/<5534999366009>">
+                        <a href="https://wa.me/553492452707">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
 
@@ -332,16 +344,21 @@
         </div>
     </div>
 
-    <section id="carrinho-section">
-  <h2 class="section-title">CARRINHO</h2>
-  <div id="carrinho">
-    <ul id="carrinho-lista"></ul>
-    <p>Total: <span id="carrinho-total">R$0,00</span></p>
-    <button class="btn-default" id="limpar-carrinho">Limpar Carrinho</button>
-    <button class="btn-default" id="finalizar-pedido">Finalizar Pedido</button>
-
-  </div>
-</section>
+    <div id="carrinho-flutuante">
+    <button id="toggle-carrinho" class="btn-default">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="carrinho-contador">0</span>
+    </button>
+    <div id="carrinho-conteudo">
+        <h3>Carrinho</h3>
+        <ul id="carrinho-lista"></ul>
+        <p>Total: <span id="carrinho-total">R$0,00</span></p>
+        <div class="carrinho-botoes">
+            <button class="btn-default" id="limpar-carrinho">Limpar</button>
+            <button class="btn-default" id="finalizar-pedido">Finalizar</button>
+        </div>
+    </div>
+</div>
 
     
     <script src="script.js"></script>
@@ -355,7 +372,7 @@
             </span>
 
             <div class="social-media-buttons">
-                <a href="https://wa.me/<5534999366009>">
+                <a href="https://wa.me/553492452707">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
 

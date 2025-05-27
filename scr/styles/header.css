@@ -7,6 +7,31 @@ header {
     z-index: 3;
 }
 
+/* Garante que o aviso está acima de tudo */
+.aviso-container {
+    z-index: 9999 !important;
+    position: relative !important;
+}
+
+/* Estilo do botão de fechar */
+#fecharAvisoBtn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #856404;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 1;
+}
+
+#fecharAvisoBtn:hover {
+    color: #000;
+}
+
 #navbar {
     width: 100%;
     display: flex;
@@ -14,9 +39,46 @@ header {
     justify-content: space-between;
 }
 
+/* Estilo para a nova logo */
 #nav-logo {
-    font-size: 24px;
-    color: orange;
+    height: 70px;
+    width: auto;
+    max-width: 300px;
+}
+
+/* Mantenha todo o restante do CSS mobile existente */
+@media screen and (max-width: 1170px) {
+    #nav-list, #navbar .btn-default {
+        display: none;
+    }
+
+    #mobile-btn {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #333;
+    }
+
+    #mobile-menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 12px 0px;      
+    }
+
+    /* Ajuste para a logo em mobile */
+    #nav-logo {
+        height: 40px;
+        max-width: 150px;
+    }
 }
 
 #nav-list {
