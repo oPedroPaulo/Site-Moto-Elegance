@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="scr/styles/styles.css">
+    
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Moto Elegance - Agenda</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-motorcycle" id="nav-logo"> Elegance</i>
+
+            <ul id="nav-list">
+                <li class="nav-item active">
+                    <a href="#home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Lavagens</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#extra">Adicionais</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div id="mobile-menu">
+            <ul id="mobile-nav-list">
+                <li class="nav-item">
+                    <a href="#home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Lavagens</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#extra">Adicionais</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                Agende aqui
+            </button>
+        </div>
+    </header>
+
+    <main id="content">
+        <section id="home">
+            <div id="cta">
+                <h1 class="title">
+                    O Brilho que chama a 
+                    <span>atenção</span>
+                </h1>
+
+                <p class="description">Sua moto não é só máquina – é identidade sobre duas rodas. Personalize. Domine. Destaque-se.</p>
+
+                    <div id="cta_buttons">
+                        <a href="#extra" class="btn-default">
+                            Ver lavagens
+                        </a>                      
+                    </div>
+
+                    <div class="social-media-buttons">
+                        <a href="https://wa.me/<5534999366009>">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/motoelegance/">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+            </div>
+            <div id="banner">   
+                <img src="scr/images/African-Twin.png" alt="African Twin">
+            </div>
+        </section>
+
+        <div class="servicos-container" id="menu">
+        <!-- Lavagem Prata -->
+        <div class="servico-card prata">
+            <div class="servico-title">LAVAGEM PRATA</div>
+            <div class="servico-details">
+                <ul>
+                    <li>PRÉ-LAVAGEM</li>
+                    <li>DETALHAMENTO NÍVEL MÉDIO</li>
+                    <li>APLICAÇÃO DE SHAMPOO PARA ESFREGAÇÃO</li>
+                    <li>SECAGEM DE TODA A MOTO</li>
+                    <li>APLICAÇÃO DE CERA SPRAY</li>
+                    <li>REVITALIZAÇÃO DE PLÁSTICOS</li>
+                    <li>FINALIZADO COM PRETINHO NOS PNEUS</li>
+                </ul>
+            </div>
+            <div class="servico-time">TEMPO DE SERVIÇO: 3 A 5 HORAS</div>
+            
+            <select class="moto-type-select" data-service="prata">
+                <option value="urbana">Moto Urbana - R$80,00</option>
+                <option value="trail">Moto Trail - R$100,00</option>
+                <option value="bigtrail">Moto Big Trail - R$120,00</option>
+                <option value="custom">Moto Custom - R$130,00</option>
+                <option value="carenada">Moto Carenada - R$140,00</option>
+            </select>
+            
+            <div class="price" id="prata-price">R$80,00</div>
+            <button class="add-to-cart" data-service="prata">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Lavagem Ouro -->
+        <div class="servico-card ouro">
+            <div class="servico-title">LAVAGEM OURO</div>
+            <div class="servico-details">
+                <ul>
+                    <li>DESMONTAGEM DE PEÇAS</li>
+                    <li>PRÉ-LAVAGEM</li>
+                    <li>DETALHAMENTO MÁXIMO</li>
+                    <li>SHAMPOO PARA ESFREGAÇÃO</li>
+                    <li>SECAGEM DE TODA A MOTO</li>
+                    <li>APLICAÇÃO DE CERA</li>
+                    <li>REVITALIZAÇÃO NOS PLÁSTICOS</li>
+                    <li>APLICAÇÃO DE VERNIZ PARA MOTOR</li>
+                    <li>APLICAÇÃO DE SELANTE PARA PNEUS</li>
+                    <li>MONTAGEM DAS PEÇAS</li>
+                </ul>
+            </div>
+            <div class="servico-time">TEMPO DE SERVIÇO: 1 DIA</div>
+            
+            <select class="moto-type-select" data-service="ouro">
+                <option value="urbana">Moto Urbana - R$180,00</option>
+                <option value="trail">Moto Trail - R$210,00</option>
+                <option value="bigtrail">Moto Big Trail - R$220,00</option>
+                <option value="custom">Moto Custom - R$240,00</option>
+                <option value="carenada">Moto Carenada - R$250,00</option>
+            </select>
+            
+            <div class="price" id="ouro-price">R$180,00</div>
+            <button class="add-to-cart" data-service="ouro">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Lavagem Rubi -->
+        <div class="servico-card rubi">
+            <div class="servico-title">LAVAGEM RUBI</div>
+            <div class="servico-details">
+                <ul>
+                    <li>DESMONTAGEM DE PEÇAS</li>
+                    <li>PRÉ-LAVAGEM</li>
+                    <li>DETALHAMENTO MÁXIMO</li>
+                    <li>APLICAÇÃO DE SHAMPOO PARA ESFREGAÇÃO</li>
+                    <li>SECAGEM DE TODA A MOTO</li>
+                    <li>DESCONTAMINAÇÃO DA SUPERFÍCIE</li>
+                    <li>APLICAÇÃO DE SELANTE NA PINTURA</li>
+                    <li>APLICAÇÃO DE SELANTE NOS PLÁSTICOS</li>
+                    <li>APLICAÇÃO DE SELANTE NAS RODAS</li>
+                    <li>VERNIZ PARA MOTOR</li>
+                    <li>FINALIZADO COM SELANTE PARA PNEUS</li>
+                    <li>MONTAGEM DAS PEÇAS</li>
+                </ul>
+            </div>
+            <div class="servico-time">TEMPO DE SERVIÇO: 5 A 6 HORAS</div>
+            
+            <select class="moto-type-select" data-service="rubi">
+                <option value="urbana">Moto Urbana - R$230,00</option>
+                <option value="trail">Moto Trail - R$250,00</option>
+                <option value="bigtrail">Moto Big Trail - R$280,00</option>
+                <option value="custom">Moto Custom - R$300,00</option>
+                <option value="carenada">Moto Carenada - R$330,00</option>
+            </select>
+            
+            <div class="price" id="rubi-price">R$230,00</div>
+            <button class="add-to-cart" data-service="rubi">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Lavagem Diamante -->
+        <div class="servico-card diamante">
+            <div class="servico-title">LAVAGEM DIAMANTE</div>
+            <div class="servico-details">
+                <ul>
+                    <li>DESMONTAGEM DE PEÇAS</li>
+                    <li>PRÉ-LAVAGEM</li>
+                    <li>DETALHAMENTO COMPLETO</li>
+                    <li>SHAMPOO PARA ESFREGAÇÃO</li>
+                    <li>SECAGEM COMPLETA DA MOTO</li>
+                    <li>DESCONTAMINAÇÃO DA PINTURA E PLÁSTICOS</li>
+                    <li>APLICAÇÃO DE VITRIFICADOR NA PINTURA E PLÁSTICOS</li>
+                    <li>APLICAÇÃO DE VERNIZ PARA MOTOR</li>
+                    <li>FINALIZADO COM SELANTE PARA PNEUS</li>
+                    <li>MONTAGEM DAS PEÇAS</li>
+                </ul>
+            </div>
+            <div class="servico-time">TEMPO DE SERVIÇO: 3 A 4 DIAS</div>
+            
+            <select class="moto-type-select" data-service="diamante">
+                <option value="urbana">Moto Urbana - R$360,00</option>
+                <option value="trail">Moto Trail - R$380,00</option>
+                <option value="bigtrail">Moto Big Trail - R$400,00</option>
+                <option value="custom">Moto Custom - R$440,00</option>
+                <option value="carenada">Moto Carenada - R$450,00</option>
+            </select>
+            
+            <div class="price" id="diamante-price">R$360,00</div>
+            <button class="add-to-cart" data-service="diamante">ADICIONAR AO CARRINHO</button>
+        </div>
+
+        <!-- Lavagem Esmeralda -->
+        <div class="servico-card esmeralda">
+            <div class="servico-title">LAVAGEM ESMERALDA</div>
+            <div class="servico-details">
+                <ul>
+                    <li>DESMONTAGEM DE PEÇAS</li>
+                    <li>PRÉ-LAVAGEM</li>
+                    <li>DETALHAMENTO MÁXIMO</li>
+                    <li>SHAMPOO PARA ESFREGAÇÃO</li>
+                    <li>SECAGEM DE TODA A MOTO</li>
+                    <li>DESCONTAMINAÇÃO DE TODA MOTO</li>
+                    <li>APLICAÇÃO DE VITRIFICADOR PINTURA</li>
+                    <li>PLÁSTICOS: MOTOR E RODAS</li>
+                    <li>PROTEÇÃO DE 2 ANOS</li>
+                    <li>FINALIZADO COM SELANTE PARA PNEUS</li>
+                    <li>MONTAGEM DAS PEÇAS</li>
+                </ul>
+            </div>
+            <div class="servico-time">TEMPO DE SERVIÇO: 3 A 5 DIAS</div>
+            
+            <select class="moto-type-select" data-service="esmeralda">
+                <option value="urbana">Moto Urbana - R$480,00</option>
+                <option value="trail">Moto Trail - R$520,00</option>
+                <option value="bigtrail">Moto Big Trail - R$550,00</option>
+                <option value="custom">Moto Custom - R$580,00</option>
+                <option value="carenada">Moto Carenada - R$610,00</option>
+            </select>
+            
+            <div class="price" id="esmeralda-price">R$480,00</div>
+            <button class="add-to-cart" data-service="esmeralda">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+    </div>
+
+     <!-- Seção de Serviços Adicionais -->
+    <h2 class="section-title">SERVIÇOS ADICIONAIS</h2>
+    <div class="servicos-adicionais-container" id="extra">
+        <!-- Tratamento de Bacalhau -->
+        <div class="servico-adicional-card">
+            <div class="servico-title">TRATAMENTO DE BACALHAU</div>
+            <div class="servico-details">
+                <p>Tratamento especial para eliminar odores e proteger o couro</p>
+            </div>
+            <div class="price">R$25,00</div>
+            <button class="add-to-cart" data-service="tratamento_bacalhau" data-price="25">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Polimento Escapamento Cromado -->
+        <div class="servico-adicional-card">
+            <div class="servico-title">POLIMENTO ESCAPAMENTO CROMADO</div>
+            <div class="servico-details">
+                <p>Recuperação do brilho original do escapamento cromado</p>
+            </div>
+            <div class="price">A PARTIR DE R$50,00</div>
+            <button class="add-to-cart" data-service="polimento_escapamento" data-price="50">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Polimento de Cromados -->
+        <div class="servico-adicional-card">
+            <div class="servico-title">POLIMENTO DE CROMADOS</div>
+            <div class="servico-details">
+                <p>Polimento profissional para todas as peças cromadas</p>
+            </div>
+            <div class="price">R$50,00</div>
+            <button class="add-to-cart" data-service="polimento_cromados" data-price="50">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Pintura de Escapamento -->
+        <div class="servico-adicional-card">
+            <div class="servico-title">PINTURA DE ESCAPAMENTO</div>
+            <div class="servico-details">
+                <p>Pintura especial resistente a altas temperaturas</p>
+            </div>
+            <div class="price">R$20,00</div>
+            <button class="add-to-cart" data-service="pintura_escapamento" data-price="20">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Verniz para Motor -->
+        <div class="servico-adicional-card">
+            <div class="servico-title">VERNIZ PARA MOTOR</div>
+            <div class="servico-details">
+                <p>Proteção e brilho para o motor</p>
+            </div>
+            <div class="price">R$30,00</div>
+            <button class="add-to-cart" data-service="verniz_motor" data-price="30">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Restauração de Motor -->
+        <div class="servico-adicional-card">
+            <div class="servico-title">RESTAURAÇÃO DE MOTOR</div>
+            <div class="servico-details">
+                <p>Limpeza profunda e revitalização completa do motor</p>
+            </div>
+            <div class="price">R$80,00</div>
+            <button class="add-to-cart" data-service="restauracao_motor" data-price="80">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Polimento -->
+        <div class="servico-adicional-card">
+            <div class="servico-title">POLIMENTO</div>
+            <div class="servico-details">
+                <p>Polimento profissional para pintura</p>
+            </div>
+            <div class="price">A PARTIR DE R$100,00</div>
+            <button class="add-to-cart" data-service="polimento" data-price="100">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Selante para Rodas -->
+        <div class="servico-adicional-card">
+            <div class="servico-title">SELANTE PARA RODAS (6 MESES)</div>
+            <div class="servico-details">
+                <p>Proteção duradoura para rodas</p>
+            </div>
+            <div class="price">R$60,00</div>
+            <button class="add-to-cart" data-service="selante_rodas" data-price="60">ADICIONAR AO CARRINHO</button>
+        </div>
+        
+        <!-- Selante para Pintura -->
+        <div class="servico-adicional-card">
+            <div class="servico-title">SELANTE PARA PINTURA (12 MESES)</div>
+            <div class="servico-details">
+                <p>Proteção de longa duração para a pintura</p>
+            </div>
+            <div class="price">R$100,00</div>
+            <button class="add-to-cart" data-service="selante_pintura" data-price="100">ADICIONAR AO CARRINHO</button>
+        </div>
+    </div>
+
+    <section id="carrinho-section">
+  <h2 class="section-title">CARRINHO</h2>
+  <div id="carrinho">
+    <ul id="carrinho-lista"></ul>
+    <p>Total: <span id="carrinho-total">R$0,00</span></p>
+    <button class="btn-default" id="limpar-carrinho">Limpar Carrinho</button>
+    <button class="btn-default" id="finalizar-pedido">Finalizar Pedido</button>
+
+  </div>
+</section>
+
+    
+    <script src="script.js"></script>
+
+    <footer>
+        <img src="scr/images/wave.svg" alt="wave">
+
+        <div id="footer_itens">
+            <span id="copyright">
+                &copy 2025 Pedro Paulo
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="https://wa.me/<5534999366009>">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.instagram.com/motoelegance/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="scr/javascript/script.js"></script>
+    <div id="notification" class="notification">
+    <span id="notification-message"></span>
+</div>
+</body>
+</html>

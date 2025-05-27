@@ -1,0 +1,258 @@
+.servicos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.servico-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.servico-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.servico-details {
+    margin-bottom: 15px;
+}
+
+.servico-details ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.servico-details li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.servico-time {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.moto-type-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.add-to-cart {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #2980b9;
+}
+
+/* Cores específicas para cada tipo de lavagem */
+.prata {
+    border-top: 4px solid #c0c0c0;
+}
+
+.prata .servico-title {
+    color: #c0c0c0;
+}
+
+.ouro {
+    border-top: 4px solid #ffd700;
+}
+
+.ouro .servico-title {
+    color: #ffd700;
+}
+
+.rubi {
+    border-top: 4px solid #e0115f;
+}
+
+.rubi .servico-title {
+    color: #e0115f;
+}
+
+.esmeralda {
+    border-top: 4px solid #50c878;
+}
+
+.esmeralda .servico-title {
+    color: #50c878;
+}
+
+.diamante {
+    border-top: 4px solid #b9f2ff;
+}
+
+.diamante .servico-title {
+    color: #b9f2ff;
+}
+
+.servico {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.servico h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.preco {
+  color: #27ae60;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.btn {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+#carrinho {
+  margin-top: 30px;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* Estilos para a seção de serviços adicionais */
+.section-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.servicos-adicionais-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.servico-adicional-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 20px;
+    transition: transform 0.3s;
+    border-top: 4px solid #3498db;
+}
+
+.servico-adicional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.servico-adicional-card .servico-title {
+    font-size: 1.2rem;
+    color: #3498db;
+}
+
+.servico-adicional-card .servico-details {
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: #666;
+    min-height: 60px;
+}
+
+#carrinho {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto 40px;
+}
+
+#carrinho ul {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+#carrinho li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#carrinho-total {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Estilos para a notificação */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
