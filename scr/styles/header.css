@@ -4,7 +4,18 @@ header {
     position: sticky;
     top: 0;
     background-color:rgb(253, 247, 237);
-    z-index: 3;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    body::after {
+        background-size: 70%; /* Imagem um pouco maior em mobile */
+    }
+    
+    header {
+        position: sticky !important; /* Garante funcionamento em mobile */
+    }
 }
 
 /* Garante que o aviso está acima de tudo */
