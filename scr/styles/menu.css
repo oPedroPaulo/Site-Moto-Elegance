@@ -62,11 +62,11 @@
     font-weight: bold;
     text-align: center;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: #32502c;
 }
 
 .add-to-cart {
-    background-color: #3498db;
+    background-color: #34db3c;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -78,7 +78,7 @@
 }
 
 .add-to-cart:hover {
-    background-color: #2980b9;
+    background-color: #29b941;
 }
 
 /* Cores específicas para cada tipo de lavagem */
@@ -145,7 +145,7 @@
 }
 
 .btn {
-  background: #3498db;
+  background: #42db34;
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -155,7 +155,7 @@
 }
 
 .btn:hover {
-  background: #2980b9;
+  background: #3ab929;
 }
 
 /* Estilos para a seção de serviços adicionais */
