@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Imagem de fundo para todo o site */
 /* Imagem de fundo reduzida com baixa opacidade */
 body {

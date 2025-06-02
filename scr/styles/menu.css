@@ -231,6 +231,8 @@
 }
 
 #toggle-carrinho {
+    background-color:rgb(228, 193, 35);
+    color: #000;
     width: 60px;
     height: 60px;
     border-radius: 50%;
