@@ -4,7 +4,43 @@ header {
     position: sticky;
     top: 0;
     background-color:rgb(253, 247, 237);
-    z-index: 3;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+    body::after {
+        background-size: 70%; /* Imagem um pouco maior em mobile */
+    }
+    
+    header {
+        position: sticky !important; /* Garante funcionamento em mobile */
+    }
+}
+
+/* Garante que o aviso está acima de tudo */
+.aviso-container {
+    z-index: 9999 !important;
+    position: relative !important;
+}
+
+/* Estilo do botão de fechar */
+#fecharAvisoBtn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #856404;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 1;
+}
+
+#fecharAvisoBtn:hover {
+    color: #000;
 }
 
 #navbar {
@@ -14,9 +50,46 @@ header {
     justify-content: space-between;
 }
 
+/* Estilo para a nova logo */
 #nav-logo {
-    font-size: 24px;
-    color: orange;
+    height: 70px;
+    width: auto;
+    max-width: 300px;
+}
+
+/* Mantenha todo o restante do CSS mobile existente */
+@media screen and (max-width: 1170px) {
+    #nav-list, #navbar .btn-default {
+        display: none;
+    }
+
+    #mobile-btn {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #333;
+    }
+
+    #mobile-menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 12px 0px;      
+    }
+
+    /* Ajuste para a logo em mobile */
+    #nav-logo {
+        height: 55px;
+        max-width: 250px;
+    }
 }
 
 #nav-list {

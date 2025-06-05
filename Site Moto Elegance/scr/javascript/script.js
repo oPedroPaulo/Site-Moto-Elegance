@@ -3,6 +3,36 @@ $(document).ready(function(){
        $('#mobile-menu').toggleClass('active');
        $('#mobile-btn').find('i').toggleClass('fa-x');
     });
+    
+    // Configuração do carrinho flutuante
+    document.getElementById('toggle-carrinho').addEventListener('click', function() {
+        document.getElementById('carrinho-conteudo').classList.toggle('show');
+    });
+});
+
+// Versão garantida que funciona
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleção segura com IDs
+    const aviso = document.getElementById('avisoPrecos');
+    const fecharBtn = document.getElementById('fecharAvisoBtn');
+    
+    // Mostrar aviso (remove se quiser usar localStorage)
+    aviso.style.display = 'block';
+    
+    // Função para fechar
+    function fecharAviso() {
+        aviso.style.display = 'none';
+        // Opcional: usar localStorage para persistência
+        // localStorage.setItem('avisoFechado', 'true');
+    }
+    
+    // Evento de clique
+    fecharBtn.addEventListener('click', fecharAviso);
+    
+    // Opcional: Verificar localStorage ao carregar
+    // if(localStorage.getItem('avisoFechado')) {
+    //    fecharAviso();
+    // }
 });
 
 const prices = {
@@ -62,70 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('limpar-carrinho').addEventListener('click', limparCarrinho);
+    document.getElementById('finalizar-pedido').addEventListener('click', finalizarPedido);
 });
-
-function adicionarCarrinho(nome, preco) {
-    carrinho.push({ nome, preco });
-    total += preco;
-    atualizarCarrinho();
-}
-
-function atualizarCarrinho() {
-    const lista = document.getElementById('carrinho-lista');
-    lista.innerHTML = '';
-
-    carrinho.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.textContent = `${item.nome} - R$${item.preco.toFixed(2)}`;
-
-        const btnRemover = document.createElement('button');
-        btnRemover.textContent = 'Remover';
-        btnRemover.classList.add('btn-default');
-        btnRemover.style.marginLeft = '10px';
-        btnRemover.onclick = () => removerItem(index);
-
-        li.appendChild(btnRemover);
-        lista.appendChild(li);
-    });
-
-    document.getElementById('carrinho-total').textContent = `R$${total.toFixed(2)}`;
-}
-
-function removerItem(index) {
-    total -= carrinho[index].preco;
-    carrinho.splice(index, 1);
-    atualizarCarrinho();
-}
-
-function limparCarrinho() {
-    carrinho.length = 0;
-    total = 0;
-    atualizarCarrinho();
-}
-
-function finalizarPedido() {
-    if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio!");
-        return;
-    }
-
-    let mensagem = "Olá, gostaria de confirmar o seguinte pedido:%0A";
-
-    carrinho.forEach(item => {
-        mensagem += `- ${item.nome}: R$${item.preco.toFixed(2)}%0A`;
-    });
-
-    mensagem += `Total: R$${total.toFixed(2)}%0A`;
-
-    // Número do WhatsApp com DDD e país - EDITE AQUI
-    const numeroWhatsApp = "5534999366009";  // Exemplo: 55 + DDD + número
-
-    const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
-
-    window.open(url, '_blank');
-}
-
-document.getElementById('finalizar-pedido').addEventListener('click', finalizarPedido);
 
 function adicionarCarrinho(nome, preco) {
     carrinho.push({ nome, preco });
@@ -145,6 +113,46 @@ function adicionarCarrinho(nome, preco) {
     }, 3000);
 }
 
+function atualizarCarrinho() {
+    const lista = document.getElementById('carrinho-lista');
+    lista.innerHTML = '';
+    
+    // Atualiza contador
+    document.getElementById('carrinho-contador').textContent = carrinho.length;
+
+    carrinho.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span>${item.nome}</span>
+            <span>R$${item.preco.toFixed(2)}</span>
+        `;
+
+        const btnRemover = document.createElement('button');
+        btnRemover.innerHTML = '<i class="fas fa-trash"></i>';
+        btnRemover.classList.add('btn-remover');
+        btnRemover.onclick = (e) => {
+            e.stopPropagation();
+            removerItem(index);
+        };
+
+        li.appendChild(btnRemover);
+        lista.appendChild(li);
+    });
+
+    document.getElementById('carrinho-total').textContent = `R$${total.toFixed(2)}`;
+    
+    // Mostra o carrinho quando um item é adicionado
+    if (carrinho.length > 0) {
+        document.getElementById('carrinho-conteudo').classList.add('show');
+    }
+}
+
+function removerItem(index) {
+    total -= carrinho[index].preco;
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+}
+
 function limparCarrinho() {
     carrinho.length = 0;
     total = 0;
@@ -162,3 +170,40 @@ function limparCarrinho() {
         notification.classList.remove('show');
     }, 3000);
 }
+
+function finalizarPedido() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    let mensagem = "Olá, gostaria de confirmar o seguinte pedido:%0A";
+
+    carrinho.forEach(item => {
+        mensagem += `- ${item.nome}: R$${item.preco.toFixed(2)}%0A`;
+    });
+
+    mensagem += `Total: R$${total.toFixed(2)}%0A`;
+
+    const numeroWhatsApp = "553492452707";
+    const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+
+    window.open(url, '_blank');
+}
+
+// Adicione este estilo para o botão de remover
+const style = document.createElement('style');
+style.textContent = `
+    .btn-remover {
+        background: none;
+        border: none;
+        color: #ff4444;
+        cursor: pointer;
+        padding: 5px;
+        margin-left: 10px;
+    }
+    .btn-remover:hover {
+        color: #cc0000;
+    }
+`;
+document.head.appendChild(style);

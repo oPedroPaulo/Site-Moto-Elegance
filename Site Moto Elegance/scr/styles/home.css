@@ -13,7 +13,7 @@
 }
 
 #cta .title {
-    font-size: 4rem;
+    font-size: 3rem;
     color: rgb(48, 48, 48);
 }
 
@@ -64,6 +64,11 @@
         text-align: center;
         align-items: center;
     }
+
+    #cta .title {
+    font-size: 2rem;
+    color: rgb(48, 48, 48);
+}
 }
 
 
