@@ -36,12 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const prices = {
-    prata: { urbana: 80, trail: 100, bigtrail: 120, custom: 130, carenada: 140 },
-    ouro: { urbana: 180, trail: 210, bigtrail: 220, custom: 240, carenada: 250 },
-    rubi: { urbana: 230, trail: 250, bigtrail: 280, custom: 300, carenada: 330 },
-    esmeralda: { urbana: 480, trail: 520, bigtrail: 550, custom: 580, carenada: 610 },
-    diamante: { urbana: 360, trail: 380, bigtrail: 400, custom: 440, carenada: 450 }
+    prata: { urbana: 89.90, trail: 109.90, bigtrail: 119.90, custom: 129.90, carenada: 139.90 },
+    ouro: { urbana: 189.90, trail: 219.90, bigtrail: 229.90, custom: 249.90, carenada: 249.90 },
+    diamante: { urbana: 389.90, trail: 419.90, bigtrail: 459.90, custom: 499.90 },
+    esmeralda: { urbana: 459.90, trail: 549.90, bigtrail: 569.90, custom: 579.90, carenada: 579.90 },
+    manutencao: { urbana: 109.90, trail: 129.90, bigtrail: 139.90, custom: 149.90, carenada: 159.90 }
 };
+
+function formatarMoeda(valor) {
+    return `R$${valor.toFixed(2).replace('.', ',')}`;
+}
 
 const motoTypeNames = {
     urbana: "Moto Urbana",
@@ -55,15 +59,15 @@ const carrinho = [];
 let total = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Atualiza preço quando tipo de moto é alterado
     document.querySelectorAll('.moto-type-select').forEach(select => {
-        select.addEventListener('change', function() {
-            const service = this.dataset.service;
-            const priceElement = document.getElementById(`${service}-price`);
-            const motoType = this.value;
-            priceElement.textContent = `R$${prices[service][motoType]},00`;
-        });
+    select.addEventListener('change', function() {
+        const service = this.dataset.service;
+        const priceElement = document.getElementById(`${service}-price`);
+        const motoType = this.value;
+        const priceValue = prices[service][motoType];
+        priceElement.textContent = `R$${priceValue.toFixed(2).replace('.', ',')}`;
     });
+});
 
     // Listener global para todos os botões "Adicionar ao carrinho"
     document.querySelectorAll('.add-to-cart').forEach(button => {
@@ -107,7 +111,6 @@ function adicionarCarrinho(nome, preco) {
     
     notification.classList.add('show');
     
-    // Esconder a notificação após 3 segundos
     setTimeout(() => {
         notification.classList.remove('show');
     }, 3000);
@@ -117,14 +120,13 @@ function atualizarCarrinho() {
     const lista = document.getElementById('carrinho-lista');
     lista.innerHTML = '';
     
-    // Atualiza contador
     document.getElementById('carrinho-contador').textContent = carrinho.length;
 
     carrinho.forEach((item, index) => {
         const li = document.createElement('li');
         li.innerHTML = `
             <span>${item.nome}</span>
-            <span>R$${item.preco.toFixed(2)}</span>
+            <span>${formatarMoeda(item.preco)}</span>
         `;
 
         const btnRemover = document.createElement('button');
@@ -139,9 +141,8 @@ function atualizarCarrinho() {
         lista.appendChild(li);
     });
 
-    document.getElementById('carrinho-total').textContent = `R$${total.toFixed(2)}`;
+    document.getElementById('carrinho-total').textContent = formatarMoeda(total);
     
-    // Mostra o carrinho quando um item é adicionado
     if (carrinho.length > 0) {
         document.getElementById('carrinho-conteudo').classList.add('show');
     }
@@ -180,10 +181,10 @@ function finalizarPedido() {
     let mensagem = "Olá, gostaria de confirmar o seguinte pedido:%0A";
 
     carrinho.forEach(item => {
-        mensagem += `- ${item.nome}: R$${item.preco.toFixed(2)}%0A`;
+        mensagem += `- ${item.nome}: ${formatarMoeda(item.preco)}%0A`;
     });
 
-    mensagem += `Total: R$${total.toFixed(2)}%0A`;
+    mensagem += `Total: ${formatarMoeda(total)}%0A`;
 
     const numeroWhatsApp = "553492452707";
     const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;

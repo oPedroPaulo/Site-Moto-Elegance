@@ -42,6 +42,22 @@
     font-size: 0.9rem;
 }
 
+.manutencao {
+    border-top: 4px solid #6a5acd;
+}
+
+.manutencao .servico-title {
+    color: #6a5acd;
+}
+
+.servico-subtitle {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
 .servico-time {
     font-size: 0.9rem;
     color: #666;
